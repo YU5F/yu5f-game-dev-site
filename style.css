@@ -5,6 +5,55 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    padding-top: 0;
+    margin-top: 0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dark);
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding-top: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nav-links a {
+    color: var(--color-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: var(--color-brown);
+}
+
+.nav-links a.active {
+    background-color: var(--color-beige);
+    color: var(--color-dark);
+}
+
 :root {
     --color-dark: #1A120B;
     --color-brown: #3C2A21;
@@ -20,7 +69,7 @@ section {
     height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    padding: 2rem;
+    padding: 6rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
