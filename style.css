@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -239,4 +239,11 @@ button {
 
 button:hover {
     transform: translateY(-2px);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
 }
