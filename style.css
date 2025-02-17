@@ -87,7 +87,7 @@ nav {
 .nav-dot {
     width: 12px;
     height: 12px;
-    background: var(--color-beige);
+    background-color: white !important;
     border-radius: 50%;
     margin: 1rem 0;
     cursor: pointer;
@@ -95,10 +95,11 @@ nav {
 }
 
 .nav-dot.active {
+    background-color: wheat !important;
     transform: scale(1.5);
-    background: var(--color-brown);
 }
 
+/********************************HOME********************************/
 #home {
     background-color: var(--color-dark);
     color: var(--color-light);
@@ -156,6 +157,7 @@ nav {
 .profile-image:hover img {
     transform: scale(1.1);
 }
+/********************************************************************/
 
 #about {
     background-color: var(--color-brown);
@@ -167,10 +169,119 @@ nav {
     color: var(--color-dark);
 }
 
+/********************************RESUME********************************/
 #resume {
     background-color: var(--color-light);
     color: var(--color-dark);
+    overflow-x: hidden;
 }
+
+#resume h2 {
+    padding-top: 2rem;
+}
+
+.timeline-horizontal {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-brown);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-beige);
+    border: 4px solid var(--color-brown);
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-date {
+    background-color: var(--color-brown);
+    color: var(--color-light);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    text-align: center;
+    min-width: 150px;
+}
+
+.timeline-info {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.timeline-info h3 {
+    color: var(--color-dark);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-info h4 {
+    color: var(--color-brown);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-info p {
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+.responsibilities {
+    list-style: none;
+    padding: 0;
+}
+
+.responsibilities li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+.responsibilities li::before {
+    content: '•';
+    color: var(--color-brown);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/*********************************************************************/
 
 #contact {
     background-color: var(--color-dark);
@@ -246,4 +357,39 @@ button:hover {
     font-style: normal;
     font-weight: 400;
     src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@media (max-width: 1024px) {
+    .timeline-horizontal {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .timeline-line {
+        left: 50%;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    .timeline-dot {
+        top: 50%;
+        left: -10px;
+    }
+
+    .timeline-content {
+        margin-left: 2rem;
+        align-items: flex-start;
+    }
+
+    .timeline-date {
+        margin-bottom: 1rem;
+    }
 }
