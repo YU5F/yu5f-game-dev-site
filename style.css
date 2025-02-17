@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     padding-top: 0;
     margin-top: 0;
@@ -105,12 +109,13 @@ nav {
     color: var(--color-light);
 }
 
-#home > .container{
+#home>.container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3rem;
 }
+
 .profile-container {
     margin-bottom: 1rem;
 }
@@ -134,7 +139,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(26, 18, 11, 0.4); /* var(--color-dark) with opacity */
+    background-color: rgba(26, 18, 11, 0.4);
     transition: opacity 0.3s ease;
     z-index: 1;
 }
@@ -157,11 +162,16 @@ nav {
 .profile-image:hover img {
     transform: scale(1.1);
 }
+
 /********************************************************************/
 
 #about {
     background-color: var(--color-brown);
     color: var(--color-light);
+}
+
+#about .container {
+    overflow-y: scroll;
 }
 
 #projects {
@@ -173,7 +183,31 @@ nav {
 #resume {
     background-color: var(--color-light);
     color: var(--color-dark);
-    overflow-x: hidden;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+#resume .container {
+    max-width: 100%;
+    padding: 0 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-brown) var(--color-light);
+}
+
+#resume .container::-webkit-scrollbar {
+    height: 8px;
+}
+
+#resume .container::-webkit-scrollbar-track {
+    background: var(--color-light);
+}
+
+#resume .container::-webkit-scrollbar-thumb {
+    background-color: var(--color-brown);
+    border-radius: 4px;
 }
 
 #resume h2 {
@@ -188,7 +222,8 @@ nav {
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
-    margin-top: 0.5rem;
+    margin-top: 2rem auto;
+    min-width: min-content
 }
 
 .timeline-line {
@@ -203,9 +238,9 @@ nav {
 
 .timeline-item {
     position: relative;
-    flex: 1;
-    max-width: 400px;
-    min-width: 300px;
+    flex: 0 0 auto;
+    max-width: 350px;
+    min-width: 350px;
 }
 
 .timeline-dot {
@@ -243,6 +278,8 @@ nav {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
+    height: auto;
+    min-height: 300px;
 }
 
 .timeline-info h3 {
@@ -281,6 +318,7 @@ nav {
     left: 0;
     font-weight: bold;
 }
+
 /*********************************************************************/
 
 #contact {
@@ -330,7 +368,8 @@ p {
     max-width: 600px;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 1rem;
     border: none;
     border-radius: 5px;
@@ -360,36 +399,66 @@ button:hover {
 }
 
 @media (max-width: 1024px) {
+    #resume {
+        padding-top: 4rem;
+    }
+
     .timeline-horizontal {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
+        flex-direction: row;
+        padding: 2rem 1rem;
     }
 
     .timeline-line {
-        left: 50%;
-        top: 0;
-        width: 2px;
-        height: 100%;
-        transform: translateX(-50%);
+        top: 4.5rem;
+        width: 100%;
+        height: 2px;
     }
 
     .timeline-item {
-        width: 100%;
-        padding: 2rem 0;
+        padding: 0;
+        margin-right: 2rem;
     }
 
     .timeline-dot {
-        top: 50%;
-        left: -10px;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .timeline-content {
-        margin-left: 2rem;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
     .timeline-date {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #resume {
+        padding-top: 3rem;
+    }
+
+    .timeline-item {
+        width: 300px;
+        min-width: 300px;
+    }
+
+    .timeline-info {
+        padding: 1rem;
+        min-height: 250px;
+    }
+
+    .timeline-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-info h4 {
+        font-size: 1rem;
+    }
+
+    .responsibilities li {
+        font-size: 0.9rem;
     }
 }
