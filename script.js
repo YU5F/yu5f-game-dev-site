@@ -50,6 +50,26 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
+sections.forEach(section => observer.observe(section));
+
+// Project card video hover functionality
+document.querySelectorAll('.project-card').forEach(card => {
+    const video = card.querySelector('video');
+    
+    card.addEventListener('mouseenter', () => {
+        if (video) {
+            video.play();
+        }
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
+});
+
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
