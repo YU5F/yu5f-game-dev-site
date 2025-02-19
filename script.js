@@ -4,7 +4,6 @@
 
 const translations = {
     tr: {
-        "page.title": "Oyun Geliştirici Portfolyosu",
         "nav.home": "Ana Sayfa",
         "nav.about": "Hakkımda",
         "nav.projects": "Projeler",
@@ -73,7 +72,6 @@ const translations = {
         "contact.submitButton": "Gönder"
     },
     en: {
-        "page.title": "Game Developer Portfolio",
         "nav.home": "Home",
         "nav.about": "About",
         "nav.projects": "Projects",
