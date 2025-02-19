@@ -197,6 +197,7 @@ nav {
 
 #about .container {
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 #about .container::-webkit-scrollbar {
@@ -290,6 +291,7 @@ nav {
     max-height: 350px;
     overflow-y: auto;
     scrollbar-width: thin;
+    scrollbar-width: 8px;
     scrollbar-color: var(--color-brown) var(--color-light);
 }
 
@@ -381,6 +383,7 @@ p {
 
 #projects .container{
     overflow: scroll;
+    scrollbar-width: none;
 }
 
 #projects .container::-webkit-scrollbar{
