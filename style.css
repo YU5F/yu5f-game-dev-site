@@ -25,6 +25,35 @@ body {
     align-items: center;
 }
 
+.language-selector {
+    position: fixed;
+    right: 50px;
+    top: 5px;
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 2rem;
+    z-index: 2000;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--color-beige);
+    color: var(--color-light);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: var(--color-beige);
+    color: var(--color-dark);
+}
+
+.lang-btn.active {
+    background: var(--color-beige);
+    color: var(--color-dark);
+}
+
 .nav-links {
     display: flex;
     justify-content: center;
@@ -591,6 +620,9 @@ button:hover {
     .timeline-date {
         margin-bottom: 2rem;
     }
+    .language-selector{
+        right: 0px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -624,5 +656,8 @@ button:hover {
     }
     #home>.container {
         flex-direction: column;
+    }
+    .navbar{
+        display: none;
     }
 }

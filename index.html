@@ -1,22 +1,30 @@
-<html lang="tr">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Developer Portfolio</title>
+    <title data-i18n="page.title">Game Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="#home" data-section="home">Ana Sayfa</a></li>
-            <li><a href="#about" data-section="about">Hakkımda</a></li>
-            <li><a href="#projects" data-section="projects">Projeler</a></li>
-            <li><a href="#resume" data-section="resume">Özgeçmiş</a></li>
-            <li><a href="#contact" data-section="contact">İletişim</a></li>
+            <li><a href="#home" data-section="home" data-i18n="nav.home">Ana Sayfa</a></li>
+            <li><a href="#about" data-section="about" data-i18n="nav.about">Hakkımda</a></li>
+            <li><a href="#projects" data-section="projects" data-i18n="nav.projects">Projeler</a></li>
+            <li><a href="#resume" data-section="resume" data-i18n="nav.resume">Özgeçmiş</a></li>
+            <li><a href="#contact" data-section="contact" data-i18n="nav.contact">İletişim</a></li>
         </ul>
     </nav>
+
     
+    <div class="language-selector">
+        <button onclick="changeLanguage('tr')" class="lang-btn" data-lang="tr">TR</button>
+        <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
     <nav>
         <div class="nav-dot" data-section="home"></div>
         <div class="nav-dot" data-section="about"></div>
@@ -29,43 +37,52 @@
         <div class="container">
             <div class="profile-container">
                 <div class="profile-image">
-                    <img src="src/profile.jpeg" alt="Profil Fotoğrafı">
+                    <img src="src/profile.jpeg" alt="Profile Photo">
                 </div>
             </div>
             <div class="text-content">
-                <h1>Yusuf Çetin</h1>
-                <p>Oyun Geliştirici</p>
+                <h1 data-i18n="home.title">Yusuf Çetin</h1>
+                <p data-i18n="home.subtitle">Oyun Geliştirici</p>
             </div>
         </div>
     </section>
-    <!-------------------------------------------------------------------------------------------------------------------------------------->
+
     <section id="about">
         <div class="container">
-            <h2>Hakkımda</h2>
-            <p>Yazılım dünyasında edindiğim web ve mobil geliştirme tecrübemi, tutkuyla bağlı olduğum oyun geliştirme alanına aktarıyorum. Son bir yıldır profesyonel bir oyun geliştirme ekibinin parçası olarak, çevik metodolojiler kullanarak farklı projelerde aktif rol aldım. Unity Engine'de uzmanlık kazanırken, paralel olarak kişisel projelerimle de kendimi geliştirmeye devam ediyorum.</p>
-            <p>Güçlü problem çözme yeteneklerim ve yazılım geliştirme konusundaki geniş perspektifim, oyun geliştirme süreçlerine yenilikçi yaklaşımlar getirmemi sağlıyor. Öğrenmeye olan açlığım ve takım çalışmasına yatkınlığım, her projede daha iyisini başarmak için beni motive ediyor.</p>
-            <p>Hedefim, oyun sektöründeki deneyimimi artırarak, kullanıcılara unutulmaz deneyimler yaşatan oyunlar geliştirmek ve bu alandaki uzmanlığımı sürekli geliştirmek.</p>
+            <h2 data-i18n="about.title">Hakkımda</h2>
+            <p data-i18n="about.p1">Yazılım dünyasında edindiğim web ve mobil geliştirme tecrübemi, tutkuyla bağlı
+                olduğum oyun geliştirme alanına aktarıyorum. Son bir yıldır profesyonel bir oyun geliştirme ekibinin
+                parçası olarak, çevik metodolojiler kullanarak farklı projelerde aktif rol aldım. Unity Engine'de
+                uzmanlık kazanırken, paralel olarak kişisel projelerimle de kendimi geliştirmeye devam ediyorum.</p>
+            <p data-i18n="about.p2">Güçlü problem çözme yeteneklerim ve yazılım geliştirme konusundaki geniş
+                perspektifim, oyun geliştirme süreçlerine yenilikçi yaklaşımlar getirmemi sağlıyor. Öğrenmeye olan
+                açlığım ve takım çalışmasına yatkınlığım, her projede daha iyisini başarmak için beni motive ediyor.</p>
+            <p data-i18n="about.p3">Hedefim, oyun sektöründeki deneyimimi artırarak, kullanıcılara unutulmaz deneyimler
+                yaşatan oyunlar geliştirmek ve bu alandaki uzmanlığımı sürekli geliştirmek.</p>
         </div>
     </section>
-    <!-------------------------------------------------------------------------------------------------------------------------------------->
+
     <section id="projects">
         <div class="container">
-            <h2>Projeler</h2>
+            <h2 data-i18n="projects.title">Projeler</h2>
             <div class="project-grid">
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="src/project-thumbnails/survivor1.png" alt="Proje 1 Thumbnail">
+                        <img src="src/project-thumbnails/survivor1.png" alt="Project 1 Thumbnail">
                         <video loop muted>
                             <source src="src/project-videos/survivor-clip.mp4" type="video/mp4">
                         </video>
-                        <h3 class="project-title">Deathmatch Survivor</h3>
+                        <h3 class="project-title" data-i18n="projects.project1.title">Deathmatch Survivor</h3>
                     </div>
                     <div class="project-info">
                         <div class="project-description">
-                            <p>A* pathfinding algoritması ve dinamik zorluk sistemi ile gelişmiş yapay zeka mekanikleri içeren bir top-down shooter oyunu geliştirdim. Performans optimizasyonu ve oyuncu deneyimi odaklı tasarım yaklaşımıyla, oyun ilerledikçe artan bir zorluk seviyesi sistemi oluşturdum.</p>
+                            <p data-i18n="projects.project1.description">A* pathfinding algoritması ve dinamik zorluk
+                                sistemi ile gelişmiş yapay zeka mekanikleri içeren bir top-down shooter oyunu
+                                geliştirdim. Performans optimizasyonu ve oyuncu deneyimi odaklı tasarım yaklaşımıyla,
+                                oyun ilerledikçe artan bir zorluk seviyesi sistemi oluşturdum.</p>
                             <ul class="project-features">
-                                <li>Pathfinding</li>
-                                <li>Dinamik Zorluk</li>
+                                <li data-i18n="projects.project1.feature1">Pathfinding</li>
+                                <li data-i18n="projects.project1.feature2">Dinamik Zorluk</li>
                             </ul>
                             <div class="project-tech">
                                 <span>Unity</span>
@@ -74,26 +91,30 @@
                                 <span>2D</span>
                                 <span>Top-Down</span>
                             </div>
-                            <a href="https://play.unity.com/en/games/d6e3e89b-5476-4756-9a39-7237b133367e/deathmatch-survivor" class="project-button" target="_blank">Projeyi Gör</a>
+                            <a href="https://play.unity.com/en/games/d6e3e89b-5476-4756-9a39-7237b133367e/deathmatch-survivor"
+                                class="project-button" target="_blank" data-i18n="projects.viewProject">Projeyi Gör</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="src/project-thumbnails/4041.png" alt="Proje 2 Thumbnail">
+                        <img src="src/project-thumbnails/4041.png" alt="Project 2 Thumbnail">
                         <video loop muted>
                             <source src="src/project-videos/404clip.mp4" type="video/mp4">
                         </video>
-                        <h3 class="project-title">404 The Game</h3>
+                        <h3 class="project-title" data-i18n="projects.project2.title">404 The Game</h3>
                     </div>
                     <div class="project-info">
                         <div class="project-description">
-                            <p>48 saatlik Game Jam'de gameplay lead olarak, karmaşık fizik hesaplamaları içeren Forced Perspective ve Lazer yansıma sistemlerini tasarlayıp geliştirdim. Sıkı zaman kısıtlaması altında ekip koordinasyonunu sağlayarak, teknik zorlukları başarıyla çözdüm ve projeyi zamanında tamamladım</p>
+                            <p data-i18n="projects.project2.description">48 saatlik Game Jam'de gameplay lead olarak,
+                                karmaşık fizik hesaplamaları içeren Forced Perspective ve Lazer yansıma sistemlerini
+                                tasarlayıp geliştirdim. Sıkı zaman kısıtlaması altında ekip koordinasyonunu sağlayarak,
+                                teknik zorlukları başarıyla çözdüm ve projeyi zamanında tamamladım.</p>
                             <ul class="project-features">
-                                <li>Bulmaca oyunu</li>
-                                <li>Forced Perspective mekaniği</li>
-                                <li>Yansıtmalı Lazer mekaniği</li>
+                                <li data-i18n="projects.project2.feature1">Bulmaca oyunu</li>
+                                <li data-i18n="projects.project2.feature2">Forced Perspective mekaniği</li>
+                                <li data-i18n="projects.project2.feature3">Yansıtmalı Lazer mekaniği</li>
                             </ul>
                             <div class="project-tech">
                                 <span>Unity</span>
@@ -101,61 +122,74 @@
                                 <span>Puzzle</span>
                                 <span>FPS</span>
                             </div>
-                            <a href="https://hayalimelodi.itch.io/t11-rastgele404" class="project-button" target="_blank">Projeyi Gör</a>
+                            <a href="https://hayalimelodi.itch.io/t11-rastgele404" class="project-button"
+                                target="_blank" data-i18n="projects.viewProject">Projeyi Gör</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="src/project-thumbnails/runner.png" alt="Proje 3 Thumbnail">
+                        <img src="src/project-thumbnails/runner.png" alt="Project 3 Thumbnail">
                         <video loop muted>
                             <source src="src/project-videos/runner-video.mp4" type="video/mp4">
                         </video>
-                        <h3 class="project-title">Runner</h3>
+                        <h3 class="project-title" data-i18n="projects.project3.title">Runner</h3>
                     </div>
                     <div class="project-info">
                         <div class="project-description">
-                            <p>Procedural level generation ve object pooling teknikleri kullanarak yüksek performanslı bir endless runner oyunu geliştirdim. Veri odaklı tasarım yaklaşımıyla oluşturduğum dinamik zorluk sistemi ve optimize edilmiş kod mimarisi sayesinde, mobil platformlarda akıcı bir oyun deneyimi sunmayı başardım.</p>
+                            <p data-i18n="projects.project3.description">Procedural level generation ve object pooling
+                                teknikleri kullanarak yüksek performanslı bir endless runner oyunu geliştirdim. Veri
+                                odaklı tasarım yaklaşımıyla oluşturduğum dinamik zorluk sistemi ve optimize edilmiş kod
+                                mimarisi sayesinde, mobil platformlarda akıcı bir oyun deneyimi sunmayı başardım.</p>
                             <ul class="project-features">
-                                <li>Pattern ve kural bazlı, sonsuz dünya oluşumu</li>
-                                <li>Optimizasyon için Object Pooling kullanımı</li>
-                                <li>Gelişmiş skor sistemi</li>
-                                <li>Dinamik zorluk</li>
+                                <li data-i18n="projects.project3.feature1">Pattern ve kural bazlı, sonsuz dünya oluşumu
+                                </li>
+                                <li data-i18n="projects.project3.feature2">Optimizasyon için Object Pooling kullanımı
+                                </li>
+                                <li data-i18n="projects.project3.feature3">Gelişmiş skor sistemi</li>
+                                <li data-i18n="projects.project3.feature4">Dinamik zorluk</li>
                             </ul>
                             <div class="project-tech">
                                 <span>Unity</span>
                                 <span>C#</span>
-                                <span>Optimizasyon</span>
-                                <span>Dünya oluşumu</span>
-                                <span>Skor sistemi</span>
+                                <span>Optimisation</span>
+                                <span>Procedural Level Generation</span>
+                                <span>Score System</span>
                             </div>
-                            <a href="https://play.unity.com/en/games/e136952c-4619-42f2-8e17-db52ff897a43/runner" class="project-button" target="_blank">Projeyi Gör</a>
+                            <a href="https://play.unity.com/en/games/e136952c-4619-42f2-8e17-db52ff897a43/runner"
+                                class="project-button" target="_blank" data-i18n="projects.viewProject">Projeyi Gör</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-------------------------------------------------------------------------------------------------------------------------------------->
+
     <section id="resume">
-        <div style="display: flex; align-items: center; justify-content: center; padding-top: 2rem;"><h2>Özgeçmiş</h2></div>
+        <div style="display: flex; align-items: center; justify-content: center; padding-top: 2rem;">
+            <h2 data-i18n="resume.title">Özgeçmiş</h2>
+        </div>
         <div class="container">
             <div class="timeline-horizontal">
                 <div class="timeline-line"></div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2019 - 2020</div>
+                        <div class="timeline-date" data-i18n="resume.experience1.date">2019 - 2020</div>
                         <div class="timeline-info">
-                            <h3>Stajyer Web Geliştirici</h3>
-                            <h4>C.E. Bilgisayar</h4>
+                            <h3 data-i18n="resume.experience1.title">Stajyer Web Geliştirici</h3>
+                            <h4 data-i18n="resume.experience1.company">C.E. Bilgisayar</h4>
                             <ul class="responsibilities">
-                                <li>Responsive web tasarımı konusunda kendimi geliştirdim.</li>
-                                <li>Node.js ve MongoDB kullanarak backend sistemlerini oluşturdum.</li>
-                                <li>REST API entegrasyonu kullanan projeler geliştirdim.</li>
-                                <li>Flutter kullanarak kapsamlı proje geliştirdim.</li>
+                                <li data-i18n="resume.experience1.resp1">Responsive web tasarımı konusunda kendimi
+                                    geliştirdim.</li>
+                                <li data-i18n="resume.experience1.resp2">Node.js ve MongoDB kullanarak backend
+                                    sistemlerini oluşturdum.</li>
+                                <li data-i18n="resume.experience1.resp3">REST API entegrasyonu kullanan projeler
+                                    geliştirdim.</li>
+                                <li data-i18n="resume.experience1.resp4">Flutter kullanarak kapsamlı proje geliştirdim.
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -164,15 +198,19 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2021 - 2023</div>
+                        <div class="timeline-date" data-i18n="resume.experience2.date">2021 - 2023</div>
                         <div class="timeline-info">
-                            <h3>Bilgisayar Programcılığı Öğrencisi</h3>
-                            <h4>Hacettepe Üniversitesi</h4>
+                            <h3 data-i18n="resume.experience2.title">Bilgisayar Programcılığı Öğrencisi</h3>
+                            <h4 data-i18n="resume.experience2.company">Hacettepe Üniversitesi</h4>
                             <ul class="responsibilities">
-                                <li>48 saatlik Global Game Jam'de 5 kişilik ekibimle geliştirdiğimiz proje, 15+ takım arasında 5. sırayı elde etti.</li>
-                                <li>C# ve Unity kullanarak 3+ oyun prototipi oluşturdum.</li>
-                                <li>Oyun fiziği ve optimizasyon konularında kendimi geliştirdim.</li>
-                                <li>Game Design Document (GDD) hazırlama konusunda deneyim kazandım.</li>
+                                <li data-i18n="resume.experience2.resp1">48 saatlik Global Game Jam'de 5 kişilik
+                                    ekibimle geliştirdiğimiz proje, 15+ takım arasında 5. sırayı elde etti.</li>
+                                <li data-i18n="resume.experience2.resp2">C# ve Unity kullanarak 3+ oyun prototipi
+                                    oluşturdum.</li>
+                                <li data-i18n="resume.experience2.resp3">Oyun fiziği ve optimizasyon konularında kendimi
+                                    geliştirdim.</li>
+                                <li data-i18n="resume.experience2.resp4">Game Design Document (GDD) hazırlama konusunda
+                                    deneyim kazandım.</li>
                             </ul>
                         </div>
                     </div>
@@ -181,16 +219,22 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-date" data-i18n="resume.experience3.date">2024 - 2025</div>
                         <div class="timeline-info">
-                            <h3>Junior Oyun Geliştirici</h3>
-                            <h4>Carousel Game</h4>
+                            <h3 data-i18n="resume.experience3.title">Junior Oyun Geliştirici</h3>
+                            <h4 data-i18n="resume.experience3.company">Carousel Game</h4>
                             <ul class="responsibilities">
-                                <li>Unity Ads ve ironSource gibi reklam hizmetlerinin entegrasyonlarını gerçekleştirerek reklam gelirlerini %40 artırdım.</li>
-                                <li>SOLID prensiplerini uygulayarak sürdürülebilir kod mimarisi oluşturdum.</li>
-                                <li>Projenin IOS ortamına çıkış yapabilmesi için build alıp testler yaptım.</li>
-                                <li>Otomatize test süreçleri kurarak oyun stabilitesini artırdım, regresyon testleriyle hata oranını %40 düşürdüm</li>
-                                <li>Scrum metodolojisiyle haftalık sprint'lerde belirlenen hedefleri %100 oranında tamamladım</li>
+                                <li data-i18n="resume.experience3.resp1">Unity Ads ve ironSource gibi reklam
+                                    hizmetlerinin entegrasyonlarını gerçekleştirerek reklam gelirlerini %40 artırdım.
+                                </li>
+                                <li data-i18n="resume.experience3.resp2">SOLID prensiplerini uygulayarak sürdürülebilir
+                                    kod mimarisi oluşturdum.</li>
+                                <li data-i18n="resume.experience3.resp3">Projenin IOS ortamına çıkış yapabilmesi için
+                                    build alıp testler yaptım.</li>
+                                <li data-i18n="resume.experience3.resp4">Otomatize test süreçleri kurarak oyun
+                                    stabilitesini artırdım, regresyon testleriyle hata oranını %40 düşürdüm.</li>
+                                <li data-i18n="resume.experience3.resp5">Scrum metodolojisiyle haftalık sprint'lerde
+                                    belirlenen hedefleri %100 oranında tamamladım.</li>
                             </ul>
                         </div>
                     </div>
@@ -198,20 +242,24 @@
             </div>
         </div>
     </section>
-    <!-------------------------------------------------------------------------------------------------------------------------------------->
+
     <section id="contact">
         <div class="container">
-            <h2>İletişim</h2>
+            <h2 data-i18n="contact.title">İletişim</h2>
             <form id="contactForm" class="contact-form">
-                <input type="text" name="user_name" placeholder="Adınız" required>
-                <input type="email" name="user_email" placeholder="E-posta Adresiniz" required>
-                <textarea name="message" rows="5" placeholder="Mesajınız" required></textarea>
-                <button type="submit">Gönder</button>
+                <input type="text" name="user_name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Name"
+                    required>
+                <input type="email" name="user_email" data-i18n-placeholder="contact.emailPlaceholder"
+                    placeholder="E-Mail" required>
+                <textarea name="message" rows="5" data-i18n-placeholder="contact.messagePlaceholder"
+                    placeholder="Message" required></textarea>
+                <button type="submit" data-i18n="contact.submitButton">Gönder</button>
             </form>
         </div>
     </section>
-    <!-------------------------------------------------------------------------------------------------------------------------------------->
+
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
